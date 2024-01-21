@@ -1,5 +1,4 @@
 import argparse
-import sys
 from pathlib import Path
 
 from ..common.parser import check, parse_url_batch
@@ -52,8 +51,8 @@ if args_check:
     check(url_list)
     exit()
 
-ur_list = parse_url_batch(url_list)
+repo_list = parse_url_batch(url_list)
 config = f'{CONFIG} {args_config}'
 
-for user, repo in ur_list:
-    git_clone(user, repo, args_dest, config=config)
+for repo in repo_list:
+    git_clone(repo, args_dest, config=config)
