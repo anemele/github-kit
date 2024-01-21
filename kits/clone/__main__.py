@@ -32,7 +32,7 @@ parser.add_argument(
     default='',
 )
 
-args = parser.parse_args(sys.argv[2:])
+args = parser.parse_args()
 
 args_file: Path | None = args.file
 args_url: list[str] = args.url
